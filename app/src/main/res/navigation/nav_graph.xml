@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repoSearchFragment">
+
+    <fragment
+        android:id="@+id/repoDetailFragment"
+        android:name="com.example.githubrepositoriessearch.view.RepoDetailFragment"
+        android:label="RepoDetailFragment"
+        tools:layout="@layout/fragment_repo_detail"/>
+    <fragment
+        android:id="@+id/repoSearchFragment"
+        android:name="com.example.githubrepositoriessearch.view.RepoSearchFragment"
+        android:label="RepoSearchFragment"
+        tools:layout="@layout/fragment_repo_search">
+        <action
+            android:id="@+id/action_repoSearchFragment_to_repoDetailFragment"
+            app:destination="@id/repoDetailFragment" />
+    </fragment>
+</navigation>

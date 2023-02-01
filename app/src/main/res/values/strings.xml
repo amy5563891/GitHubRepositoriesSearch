@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GitHubRepositoriesSearch</string>
+    <string name="search_hint">請輸入Repository關鍵字...</string>
+
+
+
+    <!--for test-->
+    <string name="test_repo_full_name">knockout/knockout</string>
+    <string name="test_repo_description">Knockout makes it easier to create rich, responsive UIs with JavaScript</string>
+    <string name="test_repo_star">10.3k</string>
+    <string name="test_repo_language">JavaScript</string>
+    <string name="test_repo_update_date">Updated on Dec 30,2022</string>
+</resources>

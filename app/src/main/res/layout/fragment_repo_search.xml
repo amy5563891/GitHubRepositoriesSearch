@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RepoSearchFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.githubrepositoriessearch.viewmodel.MainViewModel" />
+        <variable
+            name="adapter"
+            type="com.example.githubrepositoriessearch.adpter.RepositoriesAdapter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_button"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            app:icon="@drawable/round_arrow_back_24"
+            app:iconTint="@color/md_theme_light_primary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_view"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:hint="@string/search_hint"
+            app:endIconDrawable="@drawable/round_search_24"
+            app:endIconMode="custom"
+            app:layout_constraintBottom_toBottomOf="@+id/back_button"
+            app:layout_constraintLeft_toRightOf="@id/back_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/md_theme_light_outlineVariant"
+            android:paddingVertical="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_view"
+            app:setAdapter="@{adapter}"
+            tools:listitem="@layout/item_repository" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
